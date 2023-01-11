@@ -1,0 +1,5 @@
+#SortingAlgorithms
+
+In this repository, different sorting algorithms have been implemented such as Merge Sort, Quick sort, Bucket Sort, Bubble Sort, Insertion Sort, and Selection Sort. These methods were also tested and compared to find the sorting alogrithm with the best O(n) depending on a small or large input.
+
+The other class in the repository, sorts students based on either their first name, last name, or grade using methods from the vector class.

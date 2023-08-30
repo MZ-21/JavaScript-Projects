@@ -71,11 +71,15 @@
     padding-left: 10px;
 }
 .name-page {
-    
-    margin: 0px;
     margin-top: 6px;
     font-family:'Times New Roman', Times, serif;
-    color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgb(23, 133, 57);
+    border: none;
+    font-size: larger;
+}
+.name-page:hover {
+    cursor: pointer;
 }
 
 

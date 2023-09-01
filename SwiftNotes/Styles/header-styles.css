@@ -1,9 +1,4 @@
 
-.header-note-functions {
-    height: 40px;
-    background-color: rgb(187, 185, 185);
-}
-
 .header-top {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -81,7 +76,6 @@
 .name-page:hover {
     cursor: pointer;
 }
-
 
 /* ----------------------RIGHT-SIDE---------------------------------------- */
 .header-container-page-right-icons {
@@ -176,4 +170,85 @@
 .share-icon:active {
     background-color: rgba(166, 206, 179,0.8);
     transition: background-color 0.1s linear 0.03s;
+}
+
+/* -------------------------------------------------------------------------------*/
+.header-note-functions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 0px;
+    background-color: rgba(187, 185, 185,0.3);
+    overflow: auto;
+    border: 1px solid rgb(187,185,185);
+
+}
+.middle-side-note-functions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.text-container {
+    margin-top: 6px;
+    padding: 0px;
+    width: 32px;
+}
+.text {
+    width: 32px;
+}
+.text:active{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: rgba(199, 232, 210, 0.7);
+}
+.text-color-container {
+    margin-top: 4px;
+    width: 26px;
+    padding: 4px 4px 0px 4px;
+}
+.text-color {
+    width: 26px;
+    padding: 0px;
+}
+.text-color-container:active {
+    border: 1px solid transparent;
+    border-radius: 50px;
+    background-color: rgba(199, 232, 210, 0.7);
+
+}
+.text-highlight-container {
+    width: 26px;
+    margin-top: 8px;
+}
+.text-highlight{
+    width: 26px;
+    padding: 2.5px;
+}
+.text-highlight:active {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: rgba(199, 232, 210, 0.7);
+
+}
+.text-bold-container {
+    margin-top: 6px;
+    width: 28px;
+}
+.text-bold {
+    width: 28px;
+    padding-top: 2px;
+} 
+.text-bold:active {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: rgba(199, 232, 210, 0.7);
+}
+
+/* --------------------------------------DROPDOWN ------------------------------------------*/
+
+.dropdown {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: absolute;
+    background-color: grey;
 }

@@ -1,3 +1,41 @@
+//DROPDOWM MENU JS
+
+//creating variables to hold elements
+const dropdownEllipses = document.getElementById("js-header-icon-ellipses");
+const dropdown = document.getElementById("js-dropdown-menu");
+
+//creating function to toggle show class when dropdown is clicked
+
+const clickedDropdown = function(){
+    dropdown.classList.toggle("show");
+    dropdownEllipses.classList.toggle("ellipsis-icon-show-clicked");
+}
+
+//adding an event listner to ellipses and calling the clickedDropdown function when user clicks on ellipses
+
+dropdownEllipses.addEventListener("click",function (e) {
+    e.stopPropagation();
+    clickedDropdown();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //variable to check whether user already clicked the drop down
 var userClickedDropDown = false;

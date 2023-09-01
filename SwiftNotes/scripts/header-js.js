@@ -102,3 +102,9 @@ pageName.addEventListener("click",()=>{
 //-------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
+const page = document.getElementById("base-page");
+
+page.addEventListener("keyup",event =>{
+    if(event.code==="Space"){
+        console.log(page.innerText);
+}});

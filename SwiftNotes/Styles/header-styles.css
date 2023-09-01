@@ -1,6 +1,7 @@
 
 .header{
     max-width: 100%;
+    max-height: 100%;
 }
 .header-top {
     display: grid;
@@ -226,7 +227,7 @@
 .header-menu-bar{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 50px;
+    height: 0px;
     background-color: rgb(213, 210, 210);
     overflow: auto;
     border: 1px solid rgb(187,185,185);
@@ -239,6 +240,7 @@
     transform: translateY(0rem);
     visibility: visible;
     opacity: 1;
+    height: 50px;
 }
 .down-icon-show-clicked {
     background-color: rgba(166, 206, 179,0.8);

@@ -154,7 +154,8 @@
     border-top-left-radius:20px ;
     max-width: 100%;
     min-width:110px;
-    margin-right: 200px;
+    margin-right: 50px;
+    margin-bottom: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     visibility: hidden;
@@ -176,7 +177,8 @@
     border-top-left-radius: 20px;
 }
 
-.show {
+/*------classes to toggle drop down menu-------------*/
+.show-drop-down-menu-ellipses {
     transform: translateY(0rem);
     visibility: visible;
     opacity: 1;
@@ -186,7 +188,6 @@
     transition: background-color 0.1s linear 0.03s;
     border: 1px solid transparent;
     border-radius: 40px;
-    
 }
 /*------------------------------------------------------------------------------------------------------ */
 
@@ -221,17 +222,32 @@
     transition: background-color 0.1s linear 0.03s;
 }
 
-/* -------------------------------------------------------------------------------*/
-.header-note-functions {
+/* ------------------------------------HEADER-MENU-BAR-------------------------------------------*/
+.header-menu-bar{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 0px;
+    height: 50px;
     background-color: rgb(213, 210, 210);
     overflow: auto;
     border: 1px solid rgb(187,185,185);
+    visibility: hidden;
+    opacity: 0;
 
 }
-.middle-side-note-functions {
+/*-------------CLASSES TO TOGGLE MENU BAR ---------------------------------*/
+.show-header-menu-bar {
+    transform: translateY(0rem);
+    visibility: visible;
+    opacity: 1;
+}
+.down-icon-show-clicked {
+    background-color: rgba(166, 206, 179,0.8);
+    transition: background-color 0.1s linear 0.03s;
+    border: 1px solid transparent;
+    border-radius: 40px;   
+}
+/*-------------------------------------------------------------------------*/
+.middle-side-menu-bar {
     display: flex;
     flex-direction: row;
     align-items: center;

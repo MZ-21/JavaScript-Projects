@@ -27,6 +27,9 @@ document.documentElement.addEventListener("click", ()=>{
     if(dropdown.classList.contains("show-drop-down-menu-ellipses")){
         toggleDropdown();
     }
+    if(pageTitle.classList.contains("select-title")){
+        editTitle();
+    }
 });
 
 
@@ -50,15 +53,108 @@ downIconContainer.addEventListener("click",(e)=>{
     toggleMenuBar();
 })
 
+//-----------------------------------DISPLAYING PAGES-----------------------------------------------------------------------------------------------//
+
+//creating variables
+const pageIcon = document.getElementById("js-page-container-icon");
+const sideBar = document.getElementById("js-side-bar-container");
+
+//creating function and addEventListener 
+
+const toggleSideBar = function(){
+    sideBar.classList.toggle("show-side-bar-container");
+    pageIcon.classList.toggle("highlight-page-icon");
+}
+
+pageIcon.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    toggleSideBar();
+})
+//-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+const page = document.getElementById("base-page");
+const pageContainer = document.getElementById("js-page-container");
+const mockPage = document.getElementById("mock-page");
+//creating array to hold info
+var pageContent = "";
+
+const displayOnMockPage = function(info){
+    mockPage.value = info;
+}
+var addEllipses = false;
+page.addEventListener("keyup",()=>{
+        var maxMockPage = 600;
+        var areaOfText = document.querySelector('textarea.page');
+
+        if(areaOfText.value.length >= maxMockPage){
+            pageContent = pageContent;
+            if(!addEllipses){
+                pageContent = pageContent + "...";
+                addEllipses=true;
+            }
+            console.log("hello");
+        }
+
+        else {pageContent = page.value;}
+
+        displayOnMockPage(pageContent);
+});
 
 
 
 
+//fixing overflow of text in page container
+
+//DOMContentLoaded event is for when browser has parsed the HTML & built
+document.addEventListener("DOMContentLoaded",()=>{
+    var max = 1536; //max number of characters
+    
+
+    var areaOfText = document.querySelector('textarea.page');
+    var areaofTextMockPage = document.querySelector('textarea.mock-page');
+    //adding an event listener on the text area
+    areaOfText.addEventListener("keypress",(e)=>{
+        mockPage.ariaReadOnly = false;
+
+        if(e.which < 0x20){
+            //e.which < 0x20 means the hex repre of 32 which is checking if unicode value is less than 32, which are non-printable characters
+            return; //do nothing
+        }
+        //check if length of textarea content (.value) is == max
+        if (areaOfText.value.length == max){
+            e.preventDefault(); //prevent the default from occuring so won't allow user to type
+        } else if(areaOfText.value.length>max){
+            //content in text area will be trimmed down to just the max characters
+            areaOfText.value = areaOfText.value.substring(0,max);
+        }
+        
+    });
+
+});
 
 
+//---------------------------------------------------------CHANGING PAGE TITLE-----------------------------------------------------------------//
+
+//creating variables 
+const pageTitle = document.getElementById("js-name-page");
+const pageTitleContainer = document.getElementById("js-name-page-container");
+
+//adding event listener and creating function to edit title once it is selected
 
 
+const editTitle = function(){
+    pageTitle.classList.toggle("select-title");
+    pageTitle.contentEditable = true;
+}
 
+pageTitle.addEventListener("click",(e)=>{
+    e.stopPropagation();
+    editTitle();
+});
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
 
@@ -89,22 +185,12 @@ downIconContainer.addEventListener("click",(e)=>{
 
 //Creating drop down when user clicks on name of page
 
-var pageName = document.getElementById("js-name-page");
+// var pageName = document.getElementById("js-name-page");
 
-//adding event listener for when user clicks on title
-pageName.addEventListener("click",()=>{
-    pageName.contentEditable = "true";
-    pageName.style.cssText =
-    "background-color: white; color: black; box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.8); "
-});
+// //adding event listener for when user clicks on title
+// pageName.addEventListener("click",()=>{
+//     pageName.contentEditable = "true";
+//     pageName.style.cssText =
+//     "background-color: white; color: black; box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.8); "
+// });
 
-
-//-------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-const page = document.getElementById("base-page");
-
-page.addEventListener("keyup",event =>{
-    if(event.code==="Space"){
-        console.log(page.innerText);
-}});

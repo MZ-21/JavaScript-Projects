@@ -11,7 +11,7 @@
            <title>SwiftNotes</title>
         </head>
         <body>
-            <div>
+            <div class="the-whole-body"> <!--only used for the event delegation-->
                 <div class="header">
                     <div class="header-top">
                         <div class="header-container-left-side">
@@ -36,7 +36,7 @@
                                 <div id="js-header-icon-openDown" class="header-icon-openDown">
                                     <svg id="js-icon-down" class="icon-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" id="arrow-drop-down-circle"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8m0-2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13-4-4h8z"></path></svg>
                                 </div>
-                                <div class="header-icon-add-page">
+                                <div id="js-header-icon-add-page" class="header-icon-add-page">
                                     <svg class="add-page-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="add-document"><path d="M20,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,13.05,2H7A3,3,0,0,0,4,5V19a3,3,0,0,0,3,3H17a3,3,0,0,0,3-3V9S20,9,20,8.94ZM14,5.41,16.59,8H15a1,1,0,0,1-1-1ZM18,19a1,1,0,0,1-1,1H7a1,1,0,0,1-1-1V5A1,1,0,0,1,7,4h5V7a3,3,0,0,0,3,3h3Zm-4-5H13V13a1,1,0,0,0-2,0v1H10a1,1,0,0,0,0,2h1v1a1,1,0,0,0,2,0V16h1a1,1,0,0,0,0-2Z"></path></svg>
                                 </div>
                                 
@@ -77,29 +77,25 @@
                         <div class="right-side-menu-bar"></div>
                     </div>
                 </div>
-                <div class="body-below-menu">
-                        <div id="js-side-bar-container" class="side-bar-container">
+                <div id="js-body-below-menu" class="body-below-menu js-c-body-below-menu">
+                        <div id="js-side-bar-container" class="side-bar-container js-c-side-bar-container">
                             <div class="mock-page-container">
-                                <textarea id="mock-page" class="mock-page" readonly="true"></textarea>
+                                <textarea id="mock-page-1" class="mock-page" readonly="true"></textarea>
                             </div>
                             <div class="mock-page-attributes-container">
                                 <div class="number-page-container">
                                     <p class="number-page">1</p>
                                 </div>
                                 <div class="delete-icon-container">
-                                    <svg class="color000000 svgShape delete-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512" id="X"><polygon points="500.899 1 406.611 1 256 195.209 105.389 1 11.101 1 208.856 256 11.101 511 105.389 511 256 316.791 406.611 511 500.899 511 303.144 256" fill="#ff0202"></polygon></svg>
+                                    <svg class="color000000 svgShape delete-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 512 512" viewBox="0 0 512 512"><polygon points="500.899 1 406.611 1 256 195.209 105.389 1 11.101 1 208.856 256 11.101 511 105.389 511 256 316.791 406.611 511 500.899 511 303.144 256" fill="#ff0202"></polygon></svg>
                                 </div>    
                             </div>
                         </div>
-                        <div id="js-page-container" class="page-container">
-                            <textarea id="base-page" class="page"></textarea>
+                        <div id="js-page-container-1" class="page-container">
+                            <textarea id="base-page-1" class="page"></textarea>
                         </div>
                 </div>
             </div>
             <script src="scripts/header-js.js"></script>
-            <!-- <script src="https://kit.fontawesome.com/4d6967597e.js" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> -->
         </body>
     </html>

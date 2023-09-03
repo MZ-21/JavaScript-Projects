@@ -1,0 +1,61 @@
+
+.text-dropdown {
+    position: absolute;
+    background-color: white;
+    border-top-right-radius:20px ;
+    max-width: 100%;
+    min-width:110px;
+    /* margin-right: 50px;
+    margin-bottom: 5px; */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    left: 270px;
+    top:115px;
+}
+ .text-dropdown button {
+      border-top-right-radius:20px ;
+	  color: black;
+      background-color: white;
+	  padding: 12px 16px;
+	  text-decoration: none;
+      min-width: 100%;
+	  display: block;
+	  text-align: left;
+      font-size: 17px;
+      border: none;
+}
+.Times-New-Roman-btn {
+    font-family: 'Times New Roman', sans-serif;
+}
+.Arial-btn {
+    font-family: Arial, sans-serif;
+}
+
+.text-dropdown button:hover {
+    background-color: #f8f8f8;
+    border: 1px transparent rgba(218, 216, 216, 0.1);
+    border-top-right-radius: 20px;
+} 
+/*---------------------DROPDOWN TEXT OPTIONS SHOW-----------------**/
+.show-drop-down-menu-text-icon {
+    visibility: visible;
+    opacity: 1;
+}
+.text-icon-show-clicked {
+    background-color: rgba(166, 206, 179,0.8);
+    transition: background-color 0.1s linear 0.03s;
+    border: 1px solid transparent;
+    border-radius: 40px;
+}
+/*------------------------------------------------------------------------------------------------------ */
+
+/*---------------ADDING APPROPRIATE FONT FAMILY-----------------*/
+
+.add-Arial {
+    font-family: Arial;
+}
+.add-Times-New-Roman {
+    font-family: 'Times New Roman';
+}

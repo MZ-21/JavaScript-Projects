@@ -172,10 +172,9 @@
     z-index: 1;
     visibility: hidden;
     opacity: 0;
-    
 }
 .dropdown a {
-    float: none;
+      float: none;
 	  color: black;
 	  padding: 12px 16px;
 	  text-decoration: none;
@@ -238,20 +237,17 @@
 .header-menu-bar{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 0px;
+    height: 50px;
     background-color: rgb(213, 210, 210);
     overflow: auto;
     border: 1px solid rgb(187,185,185);
     visibility: hidden;
     opacity: 0;
-
 }
 /*-------------CLASSES TO TOGGLE MENU BAR ---------------------------------*/
 .show-header-menu-bar {
-    transform: translateY(0rem);
     visibility: visible;
     opacity: 1;
-    height: 50px;
 }
 .down-icon-show-clicked {
     background-color: rgba(166, 206, 179,0.8);
@@ -273,6 +269,8 @@
     margin-top: 6px;
     padding: 0px;
     width: 32px;
+    overflow: hidden;
+    float: right;
 }
 .text {
     width: 32px;

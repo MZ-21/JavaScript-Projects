@@ -68,8 +68,6 @@ document.addEventListener("click",(e)=>{ //getting of what page the user clicked
     const arraySplitID = elementID.split("-");
     pageNumber = arraySplitID[arraySplitID.length-1];
 
-    page = document.getElementById(""+elementID);
-
     //const pageContainer = document.getElementById("js-page-container-1");
     const mockPage = document.getElementById("mock-page-"+pageNumber);
     var page = document.getElementById(""+elementID);
@@ -103,11 +101,6 @@ document.addEventListener("click",(e)=>{ //getting of what page the user clicked
 
 });
 
-
-
-
-
-
 //fixing overflow of text in page container
 
 //DOMContentLoaded event is for when browser has parsed the HTML & built
@@ -117,7 +110,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     //adding an event listener on the text area
     areaOfText.addEventListener("keypress",(e)=>{
-        mockPage.ariaReadOnly = false;
+        // mockPage.ariaReadOnly = false;
 
         if(e.which < 0x20){
             //e.which < 0x20 means the hex repre of 32 which is checking if unicode value is less than 32, which are non-printable characters

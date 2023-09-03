@@ -24,17 +24,19 @@
 
 }
 .page {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-left: 8px;
     margin-top:8px;
     padding: 8px 6px;
     min-height: 95%;
     min-width: 95%;
-    letter-spacing: 1.2px;
+    /* letter-spacing: 1.2px; */
     max-width: 95%;
     resize: none;
     border: none;
     outline: none;
-    font-family: Helvetica, sans-serif;
+    
+    /* font-family: Helvetica, sans-serif; */
 }
 .side-bar-container {
     position: fixed;
@@ -100,7 +102,7 @@
     width: 10px;
 }  
 
-/* @media screen and (max-width:1024px) {
+ @media screen and (max-width:1024px) {
     .page-container{
         margin-left: 40vw;
     } 
@@ -108,20 +110,31 @@
         margin-left: 6px;
     }
     .side-bar-container {
-        width: 20vw;
+        width: 24vw;
+    }
+}
+@media screen and (max-width:900px) {
+    .page-container{
+        margin-left: 40vw;
+    } 
+    .page {
+        margin-left: 6px;
+    }
+    .side-bar-container {
+        width: 30vw;
     }
 }
 
 @media screen and (max-width:600px) {
     .page-container{
-        width: 50vw;
-        margin-left: 40vw;
+        width: 40vw;
+        margin-left: 100px;
     } 
     .page {
         margin-left: 6px;
     }
     .side-bar-container {
-        width: 25vw;
-        background-color: red;
-    }
-} */
+        visibility: hidden;
+        opacity: 0;
+        }
+} 

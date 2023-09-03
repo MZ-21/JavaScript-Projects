@@ -1,8 +1,7 @@
 
 .header{
-    /* max-width: 100%;
-    max-height: 100%; */
-    background-color: purple;
+    width: 100%;
+    position: fixed;
 }
 .header-top {
     display: grid;
@@ -259,6 +258,9 @@
     transition: background-color 0.1s linear 0.03s;
     border: 1px solid transparent;
     border-radius: 40px;   
+}
+.adjust-sidebar-margin-top{
+    margin-top: 130px;
 }
 /*-------------------------------------------------------------------------*/
 .middle-side-menu-bar {

@@ -1,3 +1,4 @@
+
 //DROPDOWM MENU JS
 
 //creating variables to hold elements
@@ -10,7 +11,7 @@ const dropdown = document.getElementById("js-dropdown-menu");
 const toggleDropdown = function(){
     dropdown.classList.toggle("show-drop-down-menu-ellipses");
     dropdownEllipses.classList.toggle("ellipsis-icon-show-clicked");
-}
+};
 
 //adding an event listner to ellipses and calling the clickedDropdown function when user clicks on ellipses
 
@@ -37,6 +38,8 @@ document.documentElement.addEventListener("click", ()=>{
 const headerMenuBar = document.getElementById("js-header-menu-bar");
 const downIconContainer = document.getElementById("js-header-icon-openDown");
 const downIcon = document.getElementById("js-icon-down");
+const sideBarContainr = document.querySelector(".js-c-side-bar-container");
+const pagesContainr = document.querySelector(".page-containers");
 
 
 //creating function that uses toggle to add a class to show the menu bar 
@@ -44,6 +47,8 @@ const downIcon = document.getElementById("js-icon-down");
 const toggleMenuBar = function(){
     headerMenuBar.classList.toggle("show-header-menu-bar");
     downIcon.classList.toggle("down-icon-show-clicked");
+    sideBarContainr.classList.toggle("adjust-sidebar-margin-top");
+    pagesContainr.classList.toggle("adjust-sidebar-margin-top");
 }
 
 //adding event listener
@@ -51,38 +56,54 @@ const toggleMenuBar = function(){
 downIconContainer.addEventListener("click",(e)=>{
     e.stopPropagation();
     toggleMenuBar();
-})
-
-
-const page = document.getElementById("base-page-1");
-const pageContainer = document.getElementById("js-page-container-1");
-const mockPage = document.getElementById("mock-page-1");
- 
-//creating variable to hold info
-var pageContent = "";
-
-//displaying text on one page in mock page 
-const displayOnMockPage = function(info){
-    mockPage.value = info;
-}
-var addEllipses = false;
-page.addEventListener("keyup",()=>{
-    console.log(window.innerHeight + " height" + " " + window.innerWidth);
-        var maxMockPage = 600;
-        var areaOfText = document.querySelector('textarea.page');
-
-        if(areaOfText.value.length >= maxMockPage){
-            pageContent = pageContent;
-            if(!addEllipses){
-                pageContent = pageContent + "...";
-                addEllipses=true;
-            }
-            console.log("hello");
-        }
-        else {pageContent = page.value;}
-
-        displayOnMockPage(pageContent);
 });
+
+
+/*---------------------DISPLAYING MOCK-PAGE TEXT--------------------------*/
+var elementID; var pageNumber;
+
+
+document.addEventListener("click",(e)=>{ //getting of what page the user clicked on so that we can get the correct mock-page
+    elementID = e.target.id;
+    const arraySplitID = elementID.split("-");
+    pageNumber = arraySplitID[arraySplitID.length-1];
+
+    page = document.getElementById(""+elementID);
+
+    //const pageContainer = document.getElementById("js-page-container-1");
+    const mockPage = document.getElementById("mock-page-"+pageNumber);
+    var page = document.getElementById(""+elementID);
+    
+    //creating variable to hold info
+    var pageContent = "";
+
+    //displaying text on one page in mock page 
+    const displayOnMockPage = function(info){
+        mockPage.value = info;
+    }
+
+    var addEllipses = false; //check to add ellipses if mock page full
+    document.addEventListener("keyup",()=>{
+        console.log(window.innerHeight + " height" + " " + window.innerWidth);
+
+            var maxMockPage = 600;
+            var areaOfText = document.querySelector('textarea.page');
+
+            if(areaOfText.value.length >= maxMockPage){
+                pageContent = pageContent;
+                if(!addEllipses){
+                    pageContent = pageContent + "...";
+                    addEllipses=true;
+                }
+            }
+            else {pageContent = page.value;}
+
+            displayOnMockPage(pageContent);
+    });
+
+});
+
+
 
 
 
@@ -139,6 +160,34 @@ pageTitle.addEventListener("click",(e)=>{
 
 
 
+//-----------------------------------DISPLAYING PAGES-----------------------------------------------------------------------------------------------//
+
+//creating variables
+const pageIcon = document.getElementById("js-page-container-icon");
+const sideBar = document.getElementById("js-side-bar-container");
+
+//creating function and addEventListener 
+pageIcon.addEventListener("click",function(){
+    sideBar.classList.toggle("show-side-bar-container");
+    pageIcon.classList.toggle("highlight-page-icon");
+    
+});
+
+document.body.addEventListener("click",function(e){
+    if(!sideBar.contains(e.target) && e.target !== pageIcon){
+        sideBar.classList.remove("show-sidebar-container");
+        pageIcon.classList.remove("highlight-page-icon");
+    }
+    // const sidebar2 = document.querySelector('.js-c-side-bar-container');
+    // sidebar2.style.height = "100%";
+
+});
+//-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
 //------------------------------------------------------------------CREATING PAGES-----------------------------------//
 
 const addPageIconContainer = document.getElementById("js-header-icon-add-page");
@@ -162,7 +211,7 @@ const toggleAddPage = function(){
 
         newPageDiv.appendChild(newTextArea);
 
-        document.querySelector('.js-c-body-below-menu').appendChild(newPageDiv);
+        document.querySelector('.page-containers').appendChild(newPageDiv);
 
 
     //ADDING A MOCKPAGE
@@ -180,7 +229,7 @@ const toggleAddPage = function(){
         document.querySelector('.js-c-side-bar-container').appendChild(newMockPageDiv);
 
         const mockPageAtrributesContainerDiv = document.createElement("div");
-        mockPageAtrributesContainerDiv.class = "mock-page-attributes-container";
+        mockPageAtrributesContainerDiv.className = "mock-page-attributes-container";
         
         const numberContainerDiv = document.createElement("div");
         numberContainerDiv.className = "number-page-container";
@@ -191,60 +240,40 @@ const toggleAddPage = function(){
 
         numberContainerDiv.appendChild(pOfNumberContainer); //appending p to it's container
 
-        mockPageAtrributesContainerDiv.appendChild(numberContainerDiv); //appending number container to attributes container div
+        // const deleteIconContainerDiv = document.createElement("div");
+        // deleteIconContainerDiv.className = "delete-icon-container";
+        const originalDeleteIconDiv = document.querySelector(".delete-icon-container");
+        // const svgX = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
-        const deleteIconContainerDiv = document.createElement("div");
-        deleteIconContainerDiv.className = "delete-icon-container";
+        // const svgX = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
-        const svgX = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svgX.setAttribute("class","color000000 svgShape delete-icon");
-        svgX.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-        svgX.setAttribute("enable-background", "new 0 0 512 512");
-        svgX.setAttribute("viewBox", "0 0 512 512");
+        const deleteIconContainerDiv = originalDeleteIconDiv.cloneNode(true);
+        // svgX.setAttribute("class","color000000 svgShape delete-icon");
+        // svgX.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+        // svgX.setAttribute("enable-background", "new 0 0 512 512");
+        // svgX.setAttribute("viewBox", "0 0 512 512");
 
-        const polygonElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
-        polygonElement.setAttribute("points", "500.899 1 406.611 1 256 195.209 105.389 1 11.101 1 208.856 256 11.101 511 105.389 511 256 316.791 406.611 511 500.899 511 303.144 256");
-        polygonElement.setAttribute("fill", "#ff0202");
+        // const polygonElement = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+        // polygonElement.setAttribute("points", "500.899 1 406.611 1 256 195.209 105.389 1 11.101 1 208.856 256 11.101 511 105.389 511 256 316.791 406.611 511 500.899 511 303.144 256");
+        // polygonElement.setAttribute("fill", "#ff0202");
 
         // Append the polygon element to the SVG element
-        svgX.appendChild(polygonElement);
+        // svgX.appendChild(polygonElement);
 
         // Append the SVG element to the target element in your HTML
-        document.body.appendChild(svgX); // Change 'document.body'
+        // document.body.appendChild(svgX); // Change 'document.body'
 
-        deleteIconContainerDiv.appendChild(svgX);
-
+        // deleteIconContainerDiv.appendChild(svgX);
+        mockPageAtrributesContainerDiv.appendChild(numberContainerDiv); //appending number container to attributes container div
         mockPageAtrributesContainerDiv.appendChild(deleteIconContainerDiv);
 
         document.querySelector('.js-c-side-bar-container').appendChild(mockPageAtrributesContainerDiv);
+
+       
 };
 
 addPageIconContainer.addEventListener("click",(e)=>{
     toggleAddPage();
 });
 
-
-//-----------------------------------DISPLAYING PAGES-----------------------------------------------------------------------------------------------//
-
-//creating variables
-const pageIcon = document.getElementById("js-page-container-icon");
-const sideBar = document.getElementById("js-side-bar-container");
-
-//creating function and addEventListener 
-pageIcon.addEventListener("click",function(){
-    sideBar.classList.toggle("show-side-bar-container");
-    pageIcon.classList.toggle("highlight-page-icon");
-    
-});
-
-document.body.addEventListener("click",function(e){
-    if(!sideBar.contains(e.target) && e.target !== pageIcon){
-        sideBar.classList.remove("show-sidebar-container");
-        pageIcon.classList.remove("highlight-page-icon");
-    }
-});
-//-------------------------------------------------------------------------------------------------------------------------------------------------//
-
-
-
-
+//--------------------------------------------------------------------------------------------------------------------------------------------------//

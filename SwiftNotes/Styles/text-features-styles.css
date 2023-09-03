@@ -51,12 +51,22 @@
 }
 /*------------------------------------------------------------------------------------------------------ */
 
-/*---------------ADDING APPROPRIATE FONT FAMILY-----------------*/
+/*---------------ADDING APPROPRIATE FUNCTIONS-----------------*/
 
 .add-Arial {
     font-family: Arial;
 }
 .add-Times-New-Roman {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'Times New Roman';
+}
+
+.add-bold {
     font-weight: bolder;
+}
+
+.add-highlight {
+    background-color: yellow;
+}
+.add-italic {
+    font-style:italic;
 }

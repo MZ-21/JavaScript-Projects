@@ -295,6 +295,21 @@
     background-color: rgba(199, 232, 210, 0.7);
 
 }
+.italic-container {
+    width: 26px;
+    margin-top: 8px;
+}
+.italic-icon{
+    width: 21px;
+    padding: 2.5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.italic-icon:active{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: rgba(199, 232, 210, 0.7);
+}
 .text-highlight-container {
     width: 26px;
     margin-top: 8px;
